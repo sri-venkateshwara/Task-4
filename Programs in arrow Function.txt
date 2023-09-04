@@ -1,0 +1,65 @@
+Print odd numbers in an array:
+
+const printOddNumbers = (arr) => {
+  arr.forEach((num) => {
+    if (num % 2 !== 0) {
+      console.log(num);
+    }
+  });
+};
+
+printOddNumbers([1, 2, 3, 4, 5, 6]);
+-------------------------------------------------------------------------------------------------------------------
+Convert all the strings to title caps in a string array:
+
+const convertToTitleCaps = (arr) => {
+  return arr.map((str) => str.charAt(0).toUpperCase() + str.slice(1));
+};
+
+const titleCapsArray = convertToTitleCaps(["hello", "world", "example"]);
+console.log(titleCapsArray);
+-------------------------------------------------------------------------------------------------------------------
+Sum of all numbers in an array:
+
+const sumArray = (arr) => {
+  return arr.reduce((sum, num) => sum + num, 0);
+};
+
+const totalSum = sumArray([1, 2, 3, 4, 5]);
+console.log(totalSum);
+-------------------------------------------------------------------------------------------------------------------
+Return all the prime numbers in an array:
+
+
+const getPrimeNumbers = (arr) => {
+  const isPrime = (num) => {
+    if (num <= 1) {
+      return false;
+    }
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+      if (num % i === 0) {
+        return false;
+      }
+    }
+    return true;
+  };
+
+  return arr.filter((num) => isPrime(num));
+};
+
+const primeNumbers = getPrimeNumbers([1, 2, 3, 4, 5, 6]);
+console.log(primeNumbers);
+--------------------------------------------------------------------------------------------------------------------
+Return all the palindromes in an array:
+
+const getPalindromes = (arr) => {
+  const isPalindrome = (str) => {
+    return str === str.split("").reverse().join("");
+  };
+
+  return arr.filter((str) => isPalindrome(str));
+};
+
+const palindromes = getPalindromes(["madam", "hello", "level", "world"]);
+console.log(palindromes);
+-----------------------------------------------------------------------------------------------------------------------
